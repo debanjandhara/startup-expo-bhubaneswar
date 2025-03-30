@@ -2,6 +2,15 @@
 import React, { useState } from 'react';
 import TicketCard from '../ui/TicketCard';
 import { useToast } from '@/hooks/use-toast';
+import { 
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const Tickets: React.FC = () => {
   const { toast } = useToast();
@@ -14,6 +23,7 @@ const Tickets: React.FC = () => {
   });
 
   const [selectedTicket, setSelectedTicket] = useState<string | null>(null);
+  const [showDeadlineDialog, setShowDeadlineDialog] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -33,21 +43,8 @@ const Tickets: React.FC = () => {
       return;
     }
     
-    // Success message
-    toast({
-      title: "Registration Submitted",
-      description: "Thank you for registering! You will receive a confirmation email shortly.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      organization: '',
-      ticketType: '',
-      days: 'full'
-    });
-    setSelectedTicket(null);
+    // Show deadline passed dialog instead of processing registration
+    setShowDeadlineDialog(true);
   };
 
   const selectTicket = (type: string) => {
@@ -242,6 +239,24 @@ const Tickets: React.FC = () => {
           </form>
         </div>
       </div>
+
+      {/* Deadline Passed Dialog */}
+      <AlertDialog open={showDeadlineDialog} onOpenChange={setShowDeadlineDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Registration Deadline Passed</AlertDialogTitle>
+            <AlertDialogDescription>
+              We're sorry, but the registration deadline for the Startup Expo Bhubaneswar 2025 has passed.
+              Please contact us at support@startupexpobhubaneswar.com for any inquiries.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowDeadlineDialog(false)}>
+              Close
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </section>
   );
 };
