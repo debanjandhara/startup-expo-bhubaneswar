@@ -35,7 +35,7 @@ const Header: React.FC = () => {
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Logo type="header" />
+        <Logo type="expo" />
         
         <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
