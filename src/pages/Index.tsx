@@ -9,8 +9,6 @@ import Schedule from '@/components/home/Schedule';
 import Tickets from '@/components/home/Tickets';
 import Sponsors from '@/components/home/Sponsors';
 import Contact from '@/components/home/Contact';
-import Speakers from '@/components/home/Speakers';
-import Testimonials from '@/components/home/Testimonials';
 
 const Index = () => {
   return (
@@ -19,10 +17,8 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Speakers />
         <Venue />
         <Schedule />
-        <Testimonials />
         <Tickets />
         <Sponsors />
         <Contact />
