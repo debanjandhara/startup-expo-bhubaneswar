@@ -111,7 +111,6 @@ const Venue: React.FC = () => {
                   [position[0] - 0.01, position[1] - 0.01],
                   [position[0] + 0.01, position[1] + 0.01]
                 ]}
-                zoom={15}
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
