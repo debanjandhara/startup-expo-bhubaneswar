@@ -106,7 +106,6 @@ const Venue: React.FC = () => {
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
               <MapContainer 
                 style={{ height: '100%', width: '100%' }}
-                scrollWheelZoom={false}
                 className="z-0"
                 bounds={[
                   [position[0] - 0.01, position[1] - 0.01],
@@ -116,7 +115,6 @@ const Venue: React.FC = () => {
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <Marker position={position}>
                   <Popup>
