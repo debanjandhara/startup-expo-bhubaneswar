@@ -23,7 +23,7 @@ const Schedule: React.FC = () => {
         },
         {
           time: "12:00 PM",
-          title: "Panel Discussion – "Innovation in Odisha's Digital Future"",
+          title: "Panel Discussion – \"Innovation in Odisha's Digital Future\"",
           description: "Expert panel discussing the roadmap for digital innovation in the state",
           speakers: ["Industry Leaders", "Government Officials", "Startup Founders"],
           location: "Main Auditorium"
