@@ -1,8 +1,27 @@
 
 import React from 'react';
 import { MapPin } from 'lucide-react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix Leaflet marker icon issues
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+let DefaultIcon = L.icon({
+  iconUrl: icon,
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41]
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const Venue: React.FC = () => {
+  // KIIT Convention Centre coordinates
+  const position: [number, number] = [20.3585, 85.8193];
+  
   return (
     <section id="venue" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -85,21 +104,22 @@ const Venue: React.FC = () => {
           {/* Map */}
           <div className="order-1 lg:order-2">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-              {/* This is a mockup map - in a real implementation, you would use Google Maps or OpenStreetMap */}
-              <div className="absolute inset-0 bg-expo-lightBlue/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-expo-blue/5 to-expo-lightBlue/20"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-16 h-16 bg-expo-blue rounded-full flex items-center justify-center animate-pulse">
-                    <div className="w-8 h-8 bg-white rounded-full"></div>
-                  </div>
-                  <div className="mt-2 bg-white px-4 py-2 rounded-md shadow-md">
-                    <p className="text-expo-blue font-bold text-center">KIIT Convention Centre</p>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 right-4 bg-white p-2 rounded-md shadow-md">
-                  <p className="text-xs text-gray-500">Map view</p>
-                </div>
-              </div>
+              <MapContainer 
+                center={position} 
+                zoom={15} 
+                style={{ height: '100%', width: '100%' }}
+                scrollWheelZoom={false}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={position}>
+                  <Popup>
+                    KIIT Convention Centre <br /> Venue for Tech Expo 2023
+                  </Popup>
+                </Marker>
+              </MapContainer>
             </div>
             
             <div className="mt-6 bg-white p-4 rounded-lg shadow-md">
