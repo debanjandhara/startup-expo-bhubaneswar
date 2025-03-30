@@ -105,14 +105,18 @@ const Venue: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
               <MapContainer 
-                center={position} 
-                zoom={15} 
                 style={{ height: '100%', width: '100%' }}
                 scrollWheelZoom={false}
+                className="z-0"
+                bounds={[
+                  [position[0] - 0.01, position[1] - 0.01],
+                  [position[0] + 0.01, position[1] + 0.01]
+                ]}
+                zoom={15}
               >
                 <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <Marker position={position}>
                   <Popup>
