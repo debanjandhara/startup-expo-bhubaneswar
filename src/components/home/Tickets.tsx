@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import TicketCard from '../ui/TicketCard';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
 import { 
   AlertDialog,
   AlertDialogAction,
@@ -11,9 +12,17 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Tickets: React.FC = () => {
   const { toast } = useToast();
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,6 +33,7 @@ const Tickets: React.FC = () => {
 
   const [selectedTicket, setSelectedTicket] = useState<string | null>(null);
   const [showDeadlineDialog, setShowDeadlineDialog] = useState(false);
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -32,6 +42,12 @@ const Tickets: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // If not logged in, prompt to login first
+    if (!user) {
+      setShowLoginDialog(true);
+      return;
+    }
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.organization || !selectedTicket) {
@@ -43,7 +59,7 @@ const Tickets: React.FC = () => {
       return;
     }
     
-    // Show deadline passed dialog instead of processing registration
+    // Always show deadline passed dialog instead of processing registration
     setShowDeadlineDialog(true);
   };
 
@@ -257,6 +273,18 @@ const Tickets: React.FC = () => {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Login Prompt Dialog */}
+      <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Login Required</DialogTitle>
+            <DialogDescription>
+              You need to be logged in to complete your registration. Please log in using the button in the top navigation bar.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
