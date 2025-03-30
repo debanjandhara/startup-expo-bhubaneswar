@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { MapPin } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -16,23 +16,12 @@ let DefaultIcon = L.icon({
   iconAnchor: [12, 41]
 });
 
-// Need to set the default icon for Leaflet
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const Venue: React.FC = () => {
   // KIIT Convention Centre coordinates
   const position: [number, number] = [20.3585, 85.8193];
   
-  // Fix for the Leaflet map container's missing height in SSR environment
-  useEffect(() => {
-    // This is needed to force a DOM update to show the map
-    const container = document.querySelector('.leaflet-container');
-    if (container) {
-      // @ts-ignore
-      window.dispatchEvent(new Event('resize'));
-    }
-  }, []);
-
   return (
     <section id="venue" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -116,12 +105,13 @@ const Venue: React.FC = () => {
           <div className="order-1 lg:order-2">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
               <MapContainer 
-                center={position}
-                zoom={14}
+                center={position} 
+                zoom={15} 
                 style={{ height: '100%', width: '100%' }}
-                className="z-0"
+                scrollWheelZoom={false}
               >
                 <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={position}>
