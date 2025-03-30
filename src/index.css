@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,46 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+
+  .section-container {
+    @apply container mx-auto py-16 px-4 md:px-8;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-serif font-bold mb-8 text-expo-darkBlue;
+  }
+
+  .section-subheading {
+    @apply text-xl md:text-2xl font-serif font-medium mb-4 text-expo-blue;
+  }
+}
+
+.button-primary {
+  @apply bg-expo-blue text-white hover:bg-expo-darkBlue transition-colors px-6 py-3 rounded-md font-medium shadow-md;
+}
+
+.button-secondary {
+  @apply bg-expo-gold text-expo-darkBlue hover:bg-yellow-500 transition-colors px-6 py-3 rounded-md font-medium shadow-md;
+}
+
+.button-outline {
+  @apply border-2 border-expo-blue text-expo-blue hover:bg-expo-blue hover:text-white transition-colors px-6 py-3 rounded-md font-medium;
+}
+
+.nav-link {
+  @apply text-expo-darkBlue hover:text-expo-blue transition-colors font-medium relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-expo-blue after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300;
+}
+
+.active-nav-link {
+  @apply text-expo-blue after:scale-x-100;
+}
+
+html {
+  scroll-behavior: smooth;
 }
