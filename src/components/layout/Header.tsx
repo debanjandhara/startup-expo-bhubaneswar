@@ -57,7 +57,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent text-white py-4'
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Logo type="expo" />
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="text-expo-darkBlue hover:text-expo-blue transition-colors font-medium"
+                className={` hover:text-expo-blue transition-colors font-medium ${isScrolled ? 'text-expo-darkBlue' : 'text-white hover:text-expo-lightBlue'}`}
               >
                 {link.name}
               </a>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-expo-darkBlue hover:text-expo-blue transition-colors font-medium"
+                className={`${isScrolled ? 'text-expo-darkBlue' : 'text-white hover:text-expo-lightBlue'} hover:text-expo-blue transition-colors font-medium`}
               >
                 {link.name}
               </Link>
