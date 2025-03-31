@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../ui/Logo';
+import startupOdisha from '../../../public/odisa-startup-logo.png';
 
 const About: React.FC = () => {
   return (
@@ -30,8 +31,8 @@ const About: React.FC = () => {
             </div>
             
             <div className="flex flex-col items-center p-6 bg-white rounded-md shadow-sm">
-              <div className="w-16 h-16 bg-expo-blue rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">OSI</span>
+              <div className="w-32 h-32 rounded-full flex items-center justify-center">
+              <img src={startupOdisha} alt='startup-odisha' />
               </div>
               <p className="text-center text-sm text-gray-600 mt-4">
                 Odisha Startup & Innovation Authority
