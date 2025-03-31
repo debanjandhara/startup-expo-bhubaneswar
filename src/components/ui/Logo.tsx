@@ -31,7 +31,7 @@ const Logo: React.FC<LogoProps> = ({ type, className = '' }) => {
       </div>
       <div className="ml-2">
         <p className="text-expo-blue font-serif font-bold text-sm md:text-base leading-tight">
-          Startup Expo<br />Bhubaneswar
+          Startup Bhubaneswar<br />Expo
         </p>
       </div>
     </div>

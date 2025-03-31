@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Logo from '../ui/Logo';
 
@@ -9,7 +8,7 @@ const About: React.FC = () => {
         <div>
           <h2 className="section-heading">About the Expo</h2>
           <p className="mb-6 text-gray-700">
-            The Startup Expo Bhubaneswar 2025 is the flagship event for the startup ecosystem in Eastern India. Organized with the official support of the Government of Odisha and the Odisha Startup & Innovation Authority, this four-day event brings together the brightest minds and most innovative startups from across the region and beyond.
+            The Startup Bhubaneswar Expo 2025 is the flagship event for the startup ecosystem in Eastern India. Organized with the official support of the Government of Odisha and the Odisha Startup & Innovation Authority, this four-day event brings together the brightest minds and most innovative startups from across the region and beyond.
           </p>
           <p className="mb-6 text-gray-700">
             Our mission is to showcase Odisha's burgeoning innovation hub and connect local startups with investors, mentors, industry experts, and potential collaborators. Through insightful panel discussions, workshops, and networking opportunities, we aim to foster a robust entrepreneurial ecosystem in the state.
@@ -43,7 +42,7 @@ const About: React.FC = () => {
           <div className="mt-8 p-6 bg-expo-blue text-white rounded-md">
             <h4 className="font-bold text-lg mb-2">Regional Innovation Hub</h4>
             <p className="text-sm">
-              The Startup Expo Bhubaneswar is a key initiative under the Odisha Startup Policy 2024, which aims to establish Bhubaneswar as a Top 10 startup destination in India by 2030. The event aligns with the state's vision of fostering 5,000 startups and creating a vibrant innovation ecosystem.
+              The Startup Bhubaneswar Expo is a key initiative under the Odisha Startup Policy 2024, which aims to establish Bhubaneswar as a Top 10 startup destination in India by 2030. The event aligns with the state's vision of fostering 5,000 startups and creating a vibrant innovation ecosystem.
             </p>
           </div>
         </div>

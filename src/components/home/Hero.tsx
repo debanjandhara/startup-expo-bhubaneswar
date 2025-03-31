@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Startup Expo<br />Bhubaneswar 2025
+            Startup Bhubaneswar<br />Expo 2025
           </h1>
           
           <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-2xl animate-fade-in" style={{ animationDelay: '0.4s' }}>

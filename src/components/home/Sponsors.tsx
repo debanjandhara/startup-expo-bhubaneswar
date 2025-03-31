@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Logo from '../ui/Logo';
 
@@ -7,7 +6,7 @@ const Sponsors: React.FC = () => {
     <section id="sponsors" className="section-container">
       <h2 className="section-heading text-center">Sponsors & Partners</h2>
       <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-        The Startup Expo Bhubaneswar 2025 is made possible by the support of our esteemed sponsors and partners.
+        The Startup Bhubaneswar Expo 2025 is made possible by the support of our esteemed sponsors and partners.
       </p>
       
       <div className="mb-16">
@@ -76,7 +75,7 @@ const Sponsors: React.FC = () => {
       <div className="mt-16 text-center">
         <h3 className="text-xl font-bold text-expo-blue mb-6">Become a Sponsor</h3>
         <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-          Interested in showcasing your brand at the Startup Expo Bhubaneswar 2025? Contact us to learn about our sponsorship packages and opportunities.
+          Interested in showcasing your brand at the Startup Bhubaneswar Expo 2025? Contact us to learn about our sponsorship packages and opportunities.
         </p>
         <a href="#contact" className="button-outline">
           Contact for Sponsorship

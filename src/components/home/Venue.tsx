@@ -72,7 +72,7 @@ const Venue: React.FC = () => {
               
               <div className="mt-8">
                 <a 
-                  href="https://maps.google.com" 
+                  href="https://maps.app.goo.gl/EkZyK4JKWHUv6HTB7" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="button-primary inline-flex items-center"

@@ -12,7 +12,7 @@ const testimonials: Testimonial[] = [
   {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     subject: "Transformative Experience",
-    text: "The Startup Expo Bhubaneswar was a game-changer for our company. The networking opportunities and insights from industry leaders helped us pivot our business strategy.",
+    text: "The Startup Bhubaneswar Expo was a game-changer for our company. The networking opportunities and insights from industry leaders helped us pivot our business strategy.",
     author: "Anita Patel",
     role: "Founder, TechStart Solutions"
   },

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -46,8 +45,8 @@ const Contact: React.FC = () => {
 
   const faqs = [
     {
-      question: "When and where is the Startup Expo Bhubaneswar taking place?",
-      answer: "The Startup Expo Bhubaneswar 2025 will be held from April 2-5, 2025, at the KIIT Convention Centre, KIIT Road, Patia, Bhubaneswar, Odisha 751024, India."
+      question: "When and where is the Startup Bhubaneswar Expo taking place?",
+      answer: "The Startup Bhubaneswar Expo 2025 will be held from April 2-5, 2025, at the KIIT Convention Centre, KIIT Road, Patia, Bhubaneswar, Odisha 751024, India."
     },
     {
       question: "How can I register for the event?",

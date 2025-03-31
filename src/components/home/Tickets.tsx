@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import TicketCard from '../ui/TicketCard';
 import { useToast } from '@/hooks/use-toast';
@@ -262,7 +261,7 @@ const Tickets: React.FC = () => {
           <AlertDialogHeader>
             <AlertDialogTitle>Registration Deadline Passed</AlertDialogTitle>
             <AlertDialogDescription>
-              We're sorry, but the registration deadline for the Startup Expo Bhubaneswar 2025 has passed.
+              We're sorry, but the registration deadline for the Startup Bhubaneswar Expo 2025 has passed.
               Please contact us at support@startupexpobhubaneswar.com for any inquiries.
             </AlertDialogDescription>
           </AlertDialogHeader>
