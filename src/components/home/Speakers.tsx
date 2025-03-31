@@ -12,51 +12,51 @@ interface Speaker {
 
 const speakers: Speaker[] = [
   {
-    name: "Dr. Sarah Chen",
-    profession: "AI & Machine Learning Expert",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "BV Jagadeesh",
+    profession: "Founding Managing Partner, KAAJ Ventures",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/BVJagadeesh.png",
     bio: "Leading AI research at Google, focusing on ethical AI development"
   },
   {
-    name: "Rajesh Kumar",
-    profession: "Tech Entrepreneur",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Kris Gopalakrishnan",
+    profession: "Chairman Axilor Ventures, Co-founder Infosys, President ISF",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/Kris-Gopalakrishnan.png",
     bio: "Founder of TechStart India, serial entrepreneur with 3 successful exits"
   },
   {
-    name: "Priya Sharma",
-    profession: "Venture Capitalist",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Mohandas Pai",
+    profession: "Chairman, Manipal Global Education & Chairman at Aarin Capital",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/Mohandas-Pai.png",
     bio: "Partner at Sequoia Capital India, investing in early-stage startups"
   },
   {
-    name: "Michael Chang",
-    profession: "Startup Mentor",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Naiyya Saggi",
+    profession: "Group Co-founder, The Good Glamm Group",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/Naiyya.png",
     bio: "Former YCombinator partner, helping startups scale globally"
   },
   {
-    name: "Dr. Anjali Patel",
-    profession: "Deep Learning Researcher",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Peter Hughes",
+    profession: "Founder and CEO, Apex Group",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/Peter.png",
     bio: "Research Director at Microsoft AI, specializing in computer vision"
   },
   {
-    name: "Arun Verma",
-    profession: "FinTech Innovator",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Prashanth Prakash",
+    profession: "Founding Partner, Accel India",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/PrashanthPrakash.png",
     bio: "CEO of FinTech Solutions, revolutionizing digital payments in India"
   },
   {
-    name: "Dr. Emily Watson",
-    profession: "Biotech Entrepreneur",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Ravi Venkatesan",
+    profession: "Chairman, Global Energy Alliance for People and Planet",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/ravi-1.png",
     bio: "Founder of BioTech Innovations, developing breakthrough medical solutions"
   },
   {
-    name: "Suresh Reddy",
-    profession: "Cloud Computing Expert",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Sanjeev Sanyal",
+    profession: "Member of the Economic Advisory Council to the Prime Minister of India",
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/speaker/Sanjeev.png",
     bio: "CTO at CloudTech Solutions, leading cloud transformation initiatives"
   }
 ];
@@ -109,13 +109,13 @@ const Speakers: React.FC = () => {
           <Slider {...settings}>
             {speakers.map((speaker, index) => (
               <div key={index} className="px-4">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="rounded-lg transform hover:-translate-y-1 transition-transform duration-300">
                   <div className="relative w-full h-64">
-                    <div className="absolute inset-0 bg-expo-gold opacity-20"></div>
+                    <div className="absolute inset-0 opacity-20"></div>
                     <img
                       src={speaker.image}
                       alt={speaker.name}
-                      className="w-full h-full object-cover"
+                      className="w-auto h-56 mx-auto object-cover"
                     />
                   </div>
                   <div className="p-6">

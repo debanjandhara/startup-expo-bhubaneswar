@@ -10,25 +10,25 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    subject: "Transformative Experience",
-    text: "The Startup Bhubaneswar Expo was a game-changer for our company. The networking opportunities and insights from industry leaders helped us pivot our business strategy.",
-    author: "Anita Patel",
-    role: "Founder, TechStart Solutions"
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/testis/Madan-Padaki.jpg",
+    subject: "Welcome to the Olympics of Entrepreneurship",
+    text: "We are bringing together global leaders, entrepreneurs, investors, policymakers and students, from across sectors, to collaborate and catalyze change. SBE 25 is creating a culture where ideas prosper and innovation thrives.",
+    author: "Madan Padaki",
+    role: "President, TechStart Solutions"
   },
   {
-    image: "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    subject: "Incredible Platform",
-    text: "As an investor, I was impressed by the quality of startups and the level of innovation showcased. This event has become a must-attend in my calendar.",
-    author: "David Chen",
-    role: "Partner, Venture Capital Fund"
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/testis/Amit-Gupta.jpg",
+    subject: "The Global Support Network",
+    text: "SBE is a truly global platform shaping the future of entrepreneurship by driving innovation and value creation to transform economies. Our mission is to promote equity, sustainability, and inclusivity worldwide, ensuring entrepreneurial opportunities are accessible to all. Thus, building a future where innovation thrives, economies are robust, and everyone can succeed.",
+    author: "Amit Gupta",
+    role: "Global Chair, TiE Global"
   },
   {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    subject: "Life-Changing Connections",
-    text: "The mentorship sessions and workshops were invaluable. I found my co-founder and secured our first round of funding through connections made at the expo.",
-    author: "Rahul Verma",
-    role: "CEO, InnovateTech"
+    image: "https://ltwgjhexldvatjakuxck.supabase.co/storage/v1/object/public/test/testis/LakshmiPratury.jpg",
+    subject: "Redefining success",
+    text: "We are thrilled to be collaborating with TiE as curation partners for SBE. We are also excited to bring a special INK Experience @ SBE to curate in depth conversations with celebrities and young innovators across disciplines with the theme \"Redefining success\". Join us there!",
+    author: "Lakshmi Pratury",
+    role: "Founder and CEO - INK"
   }
 ];
 
@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-serif text-expo-darkBlue mb-4">
-            What People Say
+            Testimonials
           </h2>
           <div className="w-20 h-1 bg-expo-gold mx-auto"></div>
         </div>
@@ -49,7 +49,7 @@ const Testimonials: React.FC = () => {
               key={index}
               className="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative h-48">
+              <div className="relative h-100">
                 <img
                   src={testimonial.image}
                   alt={testimonial.subject}

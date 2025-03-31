@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 <span className="block">Bhubaneswar, Odisha 751024</span>
               </li>
               <li className="text-gray-300 mt-2">info@startupexpobhubaneswar.org</li>
-              <li className="text-gray-300">+91 674 2725 XXX</li>
+              <li className="text-gray-300">+91 67427 25986</li>
             </ul>
           </div>
 
