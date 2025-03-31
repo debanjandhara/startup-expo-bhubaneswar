@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ScheduleAccordion from '../ui/ScheduleAccordion';
 
@@ -160,19 +159,6 @@ const Schedule: React.FC = () => {
       
       <div className="mt-10">
         <ScheduleAccordion days={scheduleData} />
-      </div>
-      
-      <div className="mt-12 text-center">
-        <a 
-          href="#" 
-          className="button-outline inline-flex items-center"
-          onClick={(e) => {
-            e.preventDefault();
-            alert("Schedule PDF download feature would be implemented here");
-          }}
-        >
-          Download Full Schedule (PDF)
-        </a>
       </div>
     </section>
   );

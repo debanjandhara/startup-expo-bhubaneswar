@@ -1,6 +1,8 @@
-
-import React from 'react';
+import React, { Suspense } from 'react';
 import { MapPin } from 'lucide-react';
+
+// Lazy load the Map component
+const Map = React.lazy(() => import('./Map'));
 
 const Venue: React.FC = () => {
   return (
@@ -21,7 +23,7 @@ const Venue: React.FC = () => {
               </div>
               
               <h4 className="text-xl font-bold mb-4 text-expo-blue">State-of-the-Art Facilities</h4>
-              <ul className="space-y-3 mb-6 text-gray-700">
+              <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-expo-gold font-bold mr-2">•</span>
                   <span>Main conference hall with capacity for 1000+ attendees</span>
@@ -48,8 +50,8 @@ const Venue: React.FC = () => {
                 </li>
               </ul>
               
-              <h4 className="text-xl font-bold mb-4 text-expo-blue">Nearby Accommodations</h4>
-              <ul className="space-y-3 text-gray-700">
+              <h4 className="text-xl font-bold mb-4 text-expo-blue mt-8">Nearby Accommodations</h4>
+              <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-expo-gold font-bold mr-2">•</span>
                   <span>KIIT Hospitality - On Campus (0.2 km)</span>
@@ -85,21 +87,13 @@ const Venue: React.FC = () => {
           {/* Map */}
           <div className="order-1 lg:order-2">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-              {/* This is a mockup map - in a real implementation, you would use Google Maps or OpenStreetMap */}
-              <div className="absolute inset-0 bg-expo-lightBlue/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-expo-blue/5 to-expo-lightBlue/20"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-16 h-16 bg-expo-blue rounded-full flex items-center justify-center animate-pulse">
-                    <div className="w-8 h-8 bg-white rounded-full"></div>
-                  </div>
-                  <div className="mt-2 bg-white px-4 py-2 rounded-md shadow-md">
-                    <p className="text-expo-blue font-bold text-center">KIIT Convention Centre</p>
-                  </div>
+              <Suspense fallback={
+                <div className="h-full w-full bg-expo-lightBlue/10 flex items-center justify-center">
+                  <div className="animate-pulse text-expo-blue">Loading map...</div>
                 </div>
-                <div className="absolute bottom-4 right-4 bg-white p-2 rounded-md shadow-md">
-                  <p className="text-xs text-gray-500">Map view</p>
-                </div>
-              </div>
+              }>
+                <Map />
+              </Suspense>
             </div>
             
             <div className="mt-6 bg-white p-4 rounded-lg shadow-md">
